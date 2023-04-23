@@ -1,0 +1,25 @@
+@import "../../index.scss";
+.menuItem {
+  @include size(100%, auto);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+
+  .head {
+    @include flex(space-between, center, row);
+
+    .name {
+      flex: 1;
+    }
+    .dash {
+      @include size(90px, 1px);
+      background: $color-golden;
+      margin: 0 1rem;
+    }
+  }
+
+  .sub {
+    @include size(100%, auto);
+    margin-top: 0.2rem;
+  }
+}

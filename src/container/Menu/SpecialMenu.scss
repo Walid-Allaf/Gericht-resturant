@@ -1,0 +1,59 @@
+@import "../../index.scss";
+.app-specialMenu {
+  flex-direction: column;
+  background: $color-black;
+
+  .title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .menu {
+    @include size(100%, auto);
+    @include flex(center, flex-start, row);
+    margin: 2rem 0;
+    @include breakpoint(large) {
+      @include flex(center, center, column);
+    }
+
+    %wineCocktails {
+      flex: 1;
+      @include size(100%, auto);
+      flex-direction: column;
+    }
+    .wine {
+      @extend %wineCocktails;
+    }
+    .img {
+      @include size(410px, auto);
+      margin: 0 2rem;
+      @include breakpoint(small) {
+        width: 100%;
+      }
+      img {
+        @include size(100%, auto);
+      }
+    }
+    .cocktails {
+      @extend %wineCocktails;
+    }
+    .heading {
+      font-family: $font-base;
+      font-weight: 600;
+      font-size: 45px;
+      line-height: 58.5px;
+      letter-spacing: 0.04em;
+      color: $color-white;
+      @include breakpoint(small) {
+        font-size: 35px;
+        line-height: 48.5px;
+      }
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0;
+      width: 100%;
+    }
+  }
+}
