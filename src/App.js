@@ -1,25 +1,33 @@
-import logo from './gericht.png';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Gericht Resturant React App is Comming Soon...
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/Walid-Allaf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My GitHub Account
-        </a>
-      </header>
-    </div>
-  );
-}
+import {
+  AboutUs,
+  Chef,
+  FindUs,
+  Footer,
+  Gallery,
+  Header,
+  Intro,
+  Laurels,
+  SpecialMenu,
+} from "./container";
+import { Navbar } from "./components";
+import "./App.scss";
+import "./index.scss";
+
+const App = () => (
+  <div>
+    <Navbar />
+    <Header />
+    <AboutUs />
+    <SpecialMenu />
+    <Chef />
+    <Intro />
+    <Laurels />
+    <Gallery />
+    <FindUs />
+    <Footer />
+  </div>
+);
 
 export default App;
