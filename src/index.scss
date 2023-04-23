@@ -74,10 +74,6 @@ a {
     }
   }
 }
-@mixin section_padding($padding) {
-  padding-top: $padding;
-  padding-bottom: $padding;
-}
 @mixin section_title {
   color: var(--main-color);
   font-size: 30px;
@@ -98,10 +94,16 @@ a {
   right: $right;
   bottom: $bottom;
 }
-@mixin size($width, $height: $width) {
+@mixin size($width, $height: auto) {
   width: $width;
   height: $height;
 }
 @mixin border-radius($radius) {
   border-radius: $radius;
+}
+@mixin flex($justify-content, $align-items, $direction) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $direction;
 }

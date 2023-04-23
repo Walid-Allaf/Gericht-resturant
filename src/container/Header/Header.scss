@@ -1,0 +1,32 @@
+@import "../../index.scss";
+.app-header {
+  background: $color-black;
+  gap: 3rem;
+
+  @include breakpoint(large) {
+    gap: 2rem;
+  }
+
+  .info {
+    h1 {
+      font-family: $font-base;
+      color: $color-golden;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 117px;
+      font-size: 90px;
+
+      @include breakpoint(small) {
+        line-height: 75px;
+        font-size: 50px;
+      }
+    }
+  }
+
+  .img {
+    text-align: center;
+    img {
+      width: 80%;
+    }
+  }
+}

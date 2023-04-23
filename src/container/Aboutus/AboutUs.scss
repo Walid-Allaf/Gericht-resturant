@@ -1,0 +1,57 @@
+@import "../../index.scss";
+.app-aboutus {
+  @include position(relative);
+  .overlay {
+    @include position(absolute);
+    inset: 0;
+    img {
+      @include size(391px, 415px);
+      z-index: 0;
+
+      @include breakpoint(small) {
+        @include size(80%, 320px);
+      }
+    }
+  }
+  .content {
+    @include size(100%);
+    gap: 4rem;
+    z-index: 2;
+
+    @include breakpoint(large) {
+      flex-direction: column;
+    }
+
+    %p {
+      margin: 2rem 0;
+      color: $color-gray;
+      @include breakpoint(extraLarge) {
+        margin: 4rem 0;
+      }
+    }
+    .about {
+      flex: 1;
+      @include flex(flex-end, flex-end, column);
+      text-align: right;
+      p {
+        @extend %p;
+      }
+    }
+    .knife {
+      img {
+        @include size(auto, 910px);
+        @include breakpoint(extraLarge) {
+          @include size(auto, 1110px);
+        }
+      }
+    }
+    .history {
+      flex: 1;
+      @include flex(flex-start, flex-start, column);
+      text-align: left;
+      p {
+        @extend %p;
+      }
+    }
+  }
+}
