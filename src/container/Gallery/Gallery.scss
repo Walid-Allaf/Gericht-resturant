@@ -1,0 +1,120 @@
+@import "../../index.scss";
+.app-gallery {
+  display: flex;
+  flex-direction: row;
+  background: $color-black;
+  padding: 4rem 0 4rem 6rem;
+
+  @include breakpoint(large) {
+    flex-direction: column;
+  }
+  @include breakpoint(medium) {
+    padding: 4rem 0 4rem 4rem;
+  }
+  @include breakpoint(small) {
+    padding: 4rem 0 4rem 2rem;
+  }
+
+  .content {
+    flex: 1;
+    @include flex(center, flex-start, column);
+    min-width: 500px;
+    padding-right: 2rem;
+
+    @media screen and (min-width: 2000px) {
+      min-width: 1000px;
+      padding-right: 4rem;
+    }
+    @include breakpoint(small) {
+      min-width: 100%;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+  .images {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    position: relative;
+
+    @include breakpoint(large) {
+      max-width: 100%;
+      margin: 5rem 0;
+    }
+
+    .images-container {
+      display: flex;
+      flex-direction: row;
+      width: max-content;
+      overflow-x: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .image-card {
+        position: relative;
+        min-width: 301px;
+        height: 447px;
+        margin-right: 2rem;
+
+        @include breakpoint(small) {
+          min-width: 240px;
+          height: 320px;
+        }
+
+        @media screen and (min-width: 2000px) {
+          min-width: 400px;
+          height: 550px;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.35;
+          }
+          .image-icon {
+            opacity: 1;
+          }
+        }
+
+        img {
+          @include size(100%, 100%);
+          object-fit: cover;
+          opacity: 1;
+          transition: 0.5s ease;
+        }
+
+        .image-icon {
+          position: absolute;
+          color: #fff;
+          font-size: 2rem;
+          opacity: 0.5;
+          transition: 0.5s ease;
+          cursor: pointer;
+        }
+      }
+    }
+    .arrows {
+      @include size(100%, auto);
+      @include flex(space-between, center, row);
+      padding: 0 1rem;
+      position: absolute;
+      bottom: 5%;
+      .arrow-icon {
+        color: $color-golden;
+        font-size: 2rem;
+        cursor: pointer;
+        background: $color-black;
+        border-radius: 5px;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

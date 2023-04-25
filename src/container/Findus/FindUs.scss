@@ -1,0 +1,39 @@
+@import "../../index.scss";
+.app-findus {
+  @include flex(space-between, center, row);
+  @include breakpoint(small) {
+    flex-direction: column;
+  }
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .img {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  .info {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+
+    .content {
+      @include size(100%, auto);
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
