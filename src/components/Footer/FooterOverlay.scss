@@ -1,0 +1,17 @@
+@import "../../index.scss";
+.app-footerOverlay {
+  @include size(100%, 100%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .black {
+    height: 25%;
+    background: $color-black;
+  }
+
+  .img {
+    height: 75%;
+  }
+}

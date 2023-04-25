@@ -1,0 +1,100 @@
+@import "../../index.scss";
+.app-footer {
+  @include flex(flex-start, center, column);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: $color-black;
+  padding-top: 0px;
+
+  @include breakpoint(medium) {
+    padding: 0 0 2rem 0;
+  }
+
+  .links {
+    @include size(100%, auto);
+    @include flex(space-between, flex-start, row);
+    margin-top: 5rem;
+
+    @include breakpoint(medium) {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    %links {
+      flex: 1;
+      margin: 1rem;
+      text-align: center;
+
+      @include breakpoint(large) {
+        margin: 2rem 0;
+        width: 100%;
+      }
+    }
+
+    %haedtext {
+      font-family: $font-base;
+      color: $color-white;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 41.6px;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: 2000px) {
+        font-size: 50px;
+        line-height: 60px;
+      }
+    }
+
+    .contact {
+      @extend %links;
+      h1 {
+        @extend %haedtext;
+      }
+    }
+    .logo {
+      @extend %links;
+      img {
+        &:first-child {
+          @include size(210px, auto);
+          margin-bottom: 0.75rem;
+
+          @include breakpoint(mobile) {
+            @include size(80%, auto);
+          }
+        }
+      }
+      .social {
+        margin-top: 0.5rem;
+
+        svg {
+          color: $color-white;
+          margin: 0.5rem;
+          font-size: 24px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-golden;
+          }
+        }
+      }
+    }
+    .work {
+      @extend %links;
+      h1 {
+        @extend %haedtext;
+      }
+      p {
+        &:nth-child(2n + 1) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 3rem;
+  }
+}
